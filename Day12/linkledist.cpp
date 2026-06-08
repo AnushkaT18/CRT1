@@ -1,5 +1,4 @@
 #include<iostream>
-#include<iostream>
 using namespace std;
 //node class
 class Node
@@ -9,7 +8,7 @@ public: //var declaration
     Node *next;
     Node(int value)//constructor(memory initialization)
     {
-        data=value;//(10)-->(20)
+        data=value;
         next=NULL;
 
     }
@@ -21,24 +20,24 @@ void insertAtBeginning(Node*& head,int value)
     newnode->next=head;
     head=newnode;
 }
-void display(Node* head)
+void display(Node*head)
 {
-    if(head == NULL)
+    if(head==NULL)
     {
-        cout<<"Linkedlist is empty"<<endl;
+        cout<<"linkedlist is empty"<<endl;
         return;
     }
-    Node *temp = head;
+    Node*temp=head;
     while(temp!=NULL)
     {
-        cout<<temp->data<<" | "<<temp->next<<"->";
+        cout<<temp->data<<" ->";
         temp=temp->next;
     }
 }
 //insert at end
-void insertAtEnd(Node*&head,int value)
+void insertAtEnd(Node*& head,int value)
 {
-    Node* newNode = new Node(value);//10,20,40
+    Node* newNode = new Node(value);//10,20
     if(head== NULL)
     {
     head=newNode;
@@ -61,4 +60,6 @@ int main()
 
     //insert at beginning
     display(head);
+
+
 }
